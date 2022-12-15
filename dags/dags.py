@@ -16,10 +16,10 @@ default_args = {'owner':'airflow',
                 'retry_delay': timedelta(minutes=1)
                 }
 
-with DAG(dag_id='twitter_etl', default_args=default_args,schedule_interval=timedelta(hours=6) , catchup=False) as dag:\
+with DAG(dag_id='aws_to_bq', default_args=default_args,schedule_interval=timedelta(hours=6) , catchup=False) as dag:\
 
     extract = BashOperator(task_id="extract", bash_command="python3 /opt/airflow/python_scripts/start_dms.py")
-    load = BashOperator(task_id="extract", bash_command="python3 /opt/airflow/python_scripts/bq_data_transfer.py")
+    load = BashOperator(task_id="load", bash_command="python3 /opt/airflow/python_scripts/bq_data_transfer.py")
     slack = BashOperator(task_id="slack", bash_command="python3 /opt/airflow/python_scripts/slack.py")
 	
     extract >> load >> slack
