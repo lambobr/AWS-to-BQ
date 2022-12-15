@@ -4,7 +4,7 @@ try:
 except Exception as e:
     print("Error : {}".format(e))
 
-with open(r'C:\Users\lambo\PycharmProjects\pythonProject\ETL_projects\aws-offsec\dms_config.json') as file:
+with open(r'/opt/airflow/python_scripts/dms_config.json') as file:
     config = json.load(file)
     SourceEndpointArn = config["SourceEndpointArn"]
     TargetEndpointArn = config["TargetEndpointArn"]
