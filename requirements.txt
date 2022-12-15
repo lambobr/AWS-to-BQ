@@ -1,0 +1,4 @@
+boto3==1.26.24
+google-cloud-bigquery==3.4.0
+google-cloud-bigquery-datatransfer==3.7.3
+slack-sdk==3.19.5
