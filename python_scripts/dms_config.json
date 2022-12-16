@@ -3,9 +3,9 @@
 "TargetEndpointArn":"arn:aws:dms:ap-southeast-1:213263631673:endpoint:2FUSIDLEDEJH5XELCMRDE5RFU3ONOI4EJUBN6TI",
 "ReplicationInstanceArn":"arn:aws:dms:ap-southeast-1:213263631673:rep:UGSF7MJS2SVDBNT5UQGGTBBU4RHHWJ3E66PONKI",
 "ReplicationTaskName": "mysqlrds-to-s3",
-"S3BucketName": "offsec-1",
-"aws_access_key_id" : "AKIATDJ4AYU4WISDRJIO",
-"aws_secret_access_key": "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",
-"gcp_ID":"GOOG1EE37A43EY6Y4X4EOULTRUE5FF7R4HGJVIRXIVDFLKPRNSH2EQEGYHRTA",
-"gcp_Secret":"yQ8jDM8chIru88qMpoFCe5/bYSHd/HR1Yzd/mxbv"
+"S3BucketName": "sample-bucket",
+"aws_access_key_id" : "",
+"aws_secret_access_key": "",
+"gcp_ID":"",
+"gcp_Secret":""
 }

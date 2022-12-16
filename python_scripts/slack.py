@@ -6,5 +6,5 @@ except Exception as e:
 
 SLACK_CHANNEL_ID = "C04FBCV2YGK"
 
-client = WebClient(token="xoxb-4506243522051-4507016124871-IOFmBiNjBpwAcf0K9r53rhZh")
+client = WebClient(token="INSERT SLACK ROBOT TOKEN HERE")
 client.chat_postMessage(channel=SLACK_CHANNEL_ID, text=f"Run successfully: {datetime.now()}")
