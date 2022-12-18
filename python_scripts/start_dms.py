@@ -159,16 +159,16 @@ def delete_finished_task(client_dms, replicationTaskArn):
     client_dms.delete_replication_task(ReplicationTaskArn=replicationTaskArn)
 
 
-def transfer(client_s3):
-    gcs_client = boto3.client(
-        "s3",  # !just like that
-        region_name='ap-southeast-1', aws_access_key_id = gcp_ID,   #create HMAC keys for a service account:https://cloud.google.com/storage/docs/authentication/managing-hmackeys#create
-        aws_secret_access_key= gcp_Secret,
-        endpoint_url="https://storage.googleapis.com"
-    )
+# def transfer(client_s3):
+#     gcs_client = boto3.client(
+#         "s3",  # !just like that
+#         region_name='ap-southeast-1', aws_access_key_id = gcp_ID,   #create HMAC keys for a service account:https://cloud.google.com/storage/docs/authentication/managing-hmackeys#create
+#         aws_secret_access_key= gcp_Secret,
+#         endpoint_url="https://storage.googleapis.com"
+#     )
 
-    client_s3.download_file(Bucket='s3-etl-lambobr', Key='project/books/LOAD00000001.csv',Filename='file.csv')
-    gcs_client.upload_file(Filename='file.csv',Bucket='aws-etl',Key='aws.csv')
+#     client_s3.download_file(Bucket='s3-etl-lambobr', Key='project/books/LOAD00000001.csv',Filename='file.csv')
+#     gcs_client.upload_file(Filename='file.csv',Bucket='aws-etl',Key='aws.csv')
 
 
 if __name__ == '__main__':
@@ -178,4 +178,4 @@ if __name__ == '__main__':
     replicationTaskArn = create_task(client_dms, SourceEndpointArn, TargetEndpointArn, ReplicationInstanceArn, ReplicationTaskName) #create new task
     start_task(client_dms, replicationTaskArn) #start migration task
     delete_finished_task(client_dms, replicationTaskArn) #finally delete finished task
-    transfer(client_s3)
+#     transfer(client_s3)
