@@ -62,6 +62,7 @@ def start_data_transfer_task(transfer_config, project_id, location):
     parent_path = f'projects/{project_id}/locations/{location}/transferConfigs/{transfer_config_id}'
     transfer_runs = transfer_client.start_manual_transfer_runs({"parent": parent_path, "requested_run_time": start_time})
 
+# note: simpler way 1. create transfer task in BQ Data Transfer UI; 2. just simply trigger the task to run; don't create (transfer_client.start_manual_transfer_runs)
 
 if __name__ == '__main__':
     parent = client(project_id, location)
