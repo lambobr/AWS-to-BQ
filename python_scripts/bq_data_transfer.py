@@ -36,8 +36,8 @@ def create_data_transfer_task(parent, dataset_id, display_name):
         params={
             "destination_table_name_template": "test_table",
             "data_path": "s3://s3-etl-lambobr/project/books/LOAD00000001.csv",
-            "access_key_id": "AKIATDJ4AYU4WISDRJIO",
-            "secret_access_key": "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",
+            "access_key_id": "INSERT AWS KEY",
+            "secret_access_key": "INSERT AWS SECRET KEY",
             "file_format": "CSV",
             "write_disposition": "WRITE_TRUNCATE",
         },
